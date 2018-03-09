@@ -33,3 +33,12 @@
 #texto {
             color: grey;
         }
+
+.nav-link {
+    font-size: 15px
+}    
+
+.carousel-inner img {
+            width: 100%;
+            height: 100%;
+            }    
