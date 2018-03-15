@@ -35,8 +35,12 @@ app.get('/contact', function(request, response) {
 	response.render('contact');
 });
 
-app.get('/selector-chat', function(request, response) {
+app.get('/selector', function(request, response) {
 	response.render('selector-chat');
+});
+
+app.get('/selector', function(request, response) {
+	response.render('chat');
 });
 
 app.post('/confirm', parseUrlencoded, function(request, response) {
