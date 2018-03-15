@@ -16,11 +16,11 @@ var io = require('socket.io')(server);
 
 app.use(logger);
 
-app.use(express.static('public')); // igual es public
+app.use(express.static('public')); // igual es public...
 
 app.set('view engine', 'pug'); // busca plantillas PUG para su renderización en la carpeta views/
 
-app.use(express.static('public')); // busca contenido en la carpeta especificada (imágenes, estilos, etc.)
+app.use(express.static('public')); // busca contenido en la carpeta especificada (imágenes, estilos, js, etc.)
 
 app.get('/', function(request, response) {
 	response.render('index');
@@ -138,11 +138,6 @@ app.get('/selector', function(request, response) {
 io.on('connection', function(client) {
 	console.log('Client Connected...');
 
-	client.on('mensajeschat', function(datos) {
-		console.log(datos.info);
-		client.broadcast.emit('mensajeschat', datos);
-	});
-
 	client.on('unir', function(nombre) {
 		client.nickname = nombre;
 		console.log('Se ha unido ' + nombre);
@@ -152,6 +147,11 @@ io.on('connection', function(client) {
 	client.on('disconnect', function() {
 		console.log('Se ha desconectado ' + client.nickname);
 		client.broadcast.emit('borrar usuario', client.nickname);
+	});
+
+	client.on('mensajeschat', function(datos) {
+		console.log(datos.info);
+		client.broadcast.emit('mensajeschat', datos);
 	});
 });
 

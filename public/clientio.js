@@ -1,4 +1,4 @@
-var socket = io.connect("http://localhost:8080");
+var socket = io.connect();
 
 socket.on('connect', function(datos) {
 	//$('#estado').html('Te has conectado al chat');
@@ -10,23 +10,25 @@ socket.on('connect', function(datos) {
 
 socket.on('mensajeschat', function(datos) {
 	//alert('Hay que introducir esta información en el chat: ' + datos.info);
-	$('#chat').append(datos.info);
+	$('#chatarea').append(datos.info + '\n');
 });
 
 $(document).ready(function() {
-	$('#chatform').submit(function(e) {
-		var mensaje = $('#comment').val();
+	$('.btn').on('click', function(e) {
+		var mensaje = socket.nickname + ': ' + $('#comment').val();
 		socket.emit('mensajeschat', {info: mensaje});
+		$('#chatarea').append(mensaje + '\n');
+		$('#comment').val('');
 	})
 });
 
 socket.on('unir', function(nombre) {
 	//alert('Se ha unido ' + nombre);
-	$('#chat').append('Se ha unido ' + nombre);
+	$('#chatarea').append('Se ha unido ' + nombre + '\n');
 });
 
 socket.on('borrar usuario', function(nombre) {
 	//alert('Se ha desconectado el usuario ' + nombre);
-	$('#chat').append('Se ha desconectado ' + nombre);
+	$('#chatarea').append('Se ha desconectado ' + nombre + '\n');
 });
 

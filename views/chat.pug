@@ -4,14 +4,12 @@ html(lang="es")
     title Selector y Chat
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1")
-    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js")
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js")
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
     script(src="jquery.js")
-    script(src="code.js")
-    script(src="socket.io/socket.io.js")
-    script(src="clientio.js")	
+    script(src="/socket.io/socket.io.js")
+    script(src="clientio.js")
     link(rel="stylesheet" href="style.css")
   body
     div.row
@@ -40,8 +38,12 @@ html(lang="es")
     div.col-sm-12.col-md-12.col-xs-12  
       div#chat.my-3
         h5.mx-3.text-secondary.col-xs-12 CHAT
-        span#chatarea.border.border-secondary.rounded.mx-3.bg-light
-        form#chatform.col-sm-12(method="POST" action="")
+        //span.border.border-secondary.rounded.mx-3.bg-light.text-secondary
+          span#chatarea.mx-2
+        div.col-sm-12.col-xs-12  	
+          textarea#chatarea.form-control(disabled="" rows="12" name="chat")
+
+        div#chatform.col-sm-12
            label Mensaje:
            textarea#comment.form-control(rows="3")
            submit.btn.btn-outline-secondary.my-2#send(type="submit") Enviar
