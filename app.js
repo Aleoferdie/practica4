@@ -10,10 +10,15 @@ var parseUrlencoded = bodyParser.urlencoded({ extended: false });
 var maxData = 20 * 1024 * 1024; // 20 MB
 var pug = require('pug');  		// Declaramos que vamos a emplear plantillas PUG
 var port = process.env.PORT || 8080;
+var logger = require('./logger');
+
+app.use(logger);
+
+app.use(express.static('public')); //igual es public...
 
 app.set('view engine', 'pug'); // busca plantillas PUG para su renderización en la carpeta views/
 
-app.use(express.static('content')); // busca contenido en la carpeta especificada (imágenes, estilos, etc.)
+app.use(express.static('public')); // busca contenido en la carpeta especificada (imágenes, estilos, etc.)
 
 app.get('/', function(request, response) {
 	response.render('index');
