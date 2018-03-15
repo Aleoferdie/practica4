@@ -1,0 +1,75 @@
+doctype html
+html(lang="es")
+  head
+    title Contacto
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js")
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+    script(src="jquery.js")
+    script(src="code.js")
+    link(rel="stylesheet" href="style.css")
+  body
+    .row
+      nav.navbar.navbar-expand-md.bg-secondary.navbar-dark.col-md-12.col-sm-12.col-xs-12
+        a.mx-5.navbar-brand(href="index")
+          img(src="images/logo.png" alt="logo")
+        button.navbar-toggler(type="button" data-toggle="collapse" data-target="#collapsibleNavbar")
+          span.navbar-toggler-icon
+        #collapsibleNavbar.collapse.navbar-collapse
+          ul.mx-5.navbar-nav
+            li.nav-item
+              a.nav-link(href="index") PORTADA
+            li.nav-item
+              a.nav-link(href="products") PRODUCTOS
+            li.nav-item
+              a.nav-link(href="selector-chat") SELECTOR Y CHAT
+            li.nav-item
+              a.nav-link(href="about") ACERCA DE LA EMPRESA
+            li.nav-item
+              a.nav-link(href="contact") CONTACTO
+            li.nav-item
+              a.nav-link(href="webservices") WEBSERVICES
+    .col-md-12
+      form(method="post" action="confirm" style="margin: 3em;")
+        .form-group
+          .row
+            .col-md-4
+              label Nombre
+              input.form-control(type="text" placeholder="Nombre" name="nombre")
+            .col-md-4
+              label Primer Apellido
+              input.form-control(type="text" placeholder="Primer Apellido" name="apellido1")
+            .col-md-4
+              label Segundo Apellido
+              input.form-control(type="text" placeholder="Segundo Apellido" name="apellido2")
+            .col-md-4.my-3
+              label Género
+              select.form-control(name="genero")
+                option Hombre
+                option Mujer
+            .col-md-4.my-3
+              label Edad
+              input.form-control(type="text" placeholder="Edad" name="edad")
+            .col-md-4.my-3
+              label Email
+              input.form-control(type="text" placeholder="ejemplo@dominio.com" name="email")
+            .col-md-4
+              label Dirección
+              input.form-control(type="text" placeholder="Calle Kalea" name="dir")
+            .col-md-4
+              label Número
+              input.form-control(type="text" placeholder="0" name="num")
+            .col-md-4
+              label CP
+              input.form-control(type="text" placeholder="00001" name="cp")
+        .form-group
+          label(for="exampleFormControlTextarea1") Mensaje
+          textarea#exampleFormControlTextarea1.form-control(rows="3" name="mensaje")
+        .checkbox.form-group
+          label
+            input(type="checkbox" value="" name="check")
+            span.mx-2 Acepto las condiciones de uso y privacidad
+        button.btn.btn-outline-secondary(type="submit") Submit

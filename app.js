@@ -17,27 +17,27 @@ app.set('view engine', 'pug');
 app.use(express.static('content')); // busca contenido en la carpeta especificada
 
 app.get('/', function(request, response) {
-	response.sendFile(path.join(__dirname + '/content/index.html')); //__dirname obtiene el path actual
+	response.render('index');
 });
 
 app.get('/index', function(request, response) {
-	response.sendFile(path.join(__dirname + '/content/index.html'));
+	response.render('index');
 });
 
 app.get('/about', function(request, response) {
-	response.sendFile(path.join(__dirname + '/content/about.html'));
+	response.render('about');
 });
 
 app.get('/products', function(request, response) {
-	response.sendFile(path.join(__dirname + '/content/products.html'));
+	response.render('products');
 });
 
 app.get('/contact', function(request, response) {
-	response.sendFile(path.join(__dirname + '/content/contact.html'));
+	response.render('contact');
 });
 
-app.get('/selector', function(request, response) {
-	response.render('selector');
+app.get('/selector-chat', function(request, response) {
+	response.render('selector-chat');
 });
 
 //app.get('/webservices', function(request, response) {
@@ -108,7 +108,7 @@ app.get('/webservices', function(request, response) {
 			response.json(bloque);	
 			break;
 		default:
-			response.sendFile(path.join(__dirname + '/content/webserv.html'));
+			response.render('webserv');
 	}
 });
 

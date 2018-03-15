@@ -1,0 +1,82 @@
+doctype html
+html(lang="es")
+  head
+    title Tienda de Alejandro, Chocarro y Santiago
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js")
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+    script(src="jquery.js")
+    script(src="code.js")
+    link(rel="stylesheet" href="style.css")
+  body
+    .row
+      nav.navbar.navbar-expand-md.bg-secondary.navbar-dark.col-md-12.col-sm-12.col-xs-12
+        a.mx-5.navbar-brand(href="index")
+          img(src="images/logo.png" alt="logo")
+        button.navbar-toggler(type="button" data-toggle="collapse" data-target="#collapsibleNavbar")
+          span.navbar-toggler-icon
+        #collapsibleNavbar.collapse.navbar-collapse
+          ul.mx-5.navbar-nav
+            li.nav-item
+              a.nav-link(href="index") PORTADA
+            li.nav-item
+              a.nav-link(href="products") PRODUCTOS
+            li.nav-item
+              a.nav-link(href="selector-chat") SELECTOR Y CHAT
+            li.nav-item
+              a.nav-link(href="about") ACERCA DE LA EMPRESA
+            li.nav-item
+              a.nav-link(href="contact") CONTACTO
+            li.nav-item
+              a.nav-link(href="webservices") WEBSERVICES
+    .row
+      span
+    // ******SLIDE DE FOTOS****** !
+    #demo.carousel.slide.row(data-ride="carousel")
+      // INDICADORES !
+      ul.carousel-indicators
+        li.active(data-target="#demo" data-slide-to="0")
+        li(data-target="#demo" data-slide-to="1")
+        li(data-target="#demo" data-slide-to="2")
+      // EL SLIDE !
+      .carousel-inner
+        .carousel-item.active
+          img(src="images/slide1.jpg" width="1000" height="500")
+        .carousel-item
+          img(src="images/slide2.jpg" width="1000" height="500")
+        .carousel-item
+          img(src="images/slide3.jpg" width="1000" height="500")
+      // CONTROLES DEL SLIDE !
+      a.carousel-control-prev(href="#demo" data-slide="prev")
+        span.carousel-control-prev-icon
+      a.carousel-control-next(href="#demo" data-slide="next")
+        span.carousel-control-next-icon
+    // ALGO DE CONTENIDO DUMMY !
+    .row.text-center.my-4
+      .col-md-4
+        div
+          a(href="products" target="_blank")
+            img(src="images/logok2.jpg" alt="K2" width="150")
+          .caption.text-justify
+            p
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie augue in tellus sollicitudin, id consequat enim interdum. Vestibulum gravida quam id massa bibendum dignissim vel vel augue. Maecenas dapibus consequat vehicula. Aliquam gravida, nibh vitae fermentum faucibus, mi eros blandit lacus, eget interdum ipsum lorem eu purus. Vestibulum aliquet nisi sit amet gravida consequat. Maecenas vestibulum tempus nisi, ut consectetur purus lacinia et. Integer lectus ipsum, viverra a enim at, sollicitudin interdum ligula. Fusce sit amet rhoncus tortor, imperdiet commodo justo. Nam ligula nibh, semper a nunc eget, feugiat ornare nibh.
+              | .
+      .col-md-4.my-3
+        div
+          a(href="products" target="_blank")
+            img(src="images/logoar.jpg" alt="Armada" width="200")
+          .caption.text-justify
+            p
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie augue in tellus sollicitudin, id consequat enim interdum. Vestibulum gravida quam id massa bibendum dignissim vel vel augue. Maecenas dapibus consequat vehicula. Aliquam gravida, nibh vitae fermentum faucibus, mi eros blandit lacus, eget interdum ipsum lorem eu purus. Vestibulum aliquet nisi sit amet gravida consequat. Maecenas vestibulum tempus nisi, ut consectetur purus lacinia et. Integer lectus ipsum, viverra a enim at, sollicitudin interdum ligula. Fusce sit amet rhoncus tortor, imperdiet commodo justo. Nam ligula nibh, semper a nunc eget, feugiat ornare nibh.
+              | .
+      .col-md-4.my-1
+        div
+          a(href="products" target="_blank")
+            img(src="images/logoat.png" alt="Atomic" width="200")
+          .caption.text-justify
+            p.my-2
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie augue in tellus sollicitudin, id consequat enim interdum. Vestibulum gravida quam id massa bibendum dignissim vel vel augue. Maecenas dapibus consequat vehicula. Aliquam gravida, nibh vitae fermentum faucibus, mi eros blandit lacus, eget interdum ipsum lorem eu purus. Vestibulum aliquet nisi sit amet gravida consequat. Maecenas vestibulum tempus nisi, ut consectetur purus lacinia et. Integer lectus ipsum, viverra a enim at, sollicitudin interdum ligula. Fusce sit amet rhoncus tortor, imperdiet commodo justo. Nam ligula nibh, semper a nunc eget, feugiat ornare nibh.
+              | .

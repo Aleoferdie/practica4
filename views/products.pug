@@ -1,16 +1,16 @@
 doctype html
 html(lang="es")
   head
-    title Confirmación de los datos
+    title Productos
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js")
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js")
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
-    link(rel="stylesheet" href="style.css")
     script(src="jquery.js")
     script(src="code.js")
+    link(rel="stylesheet" href="style.css")
   body
     .row
       nav.navbar.navbar-expand-md.bg-secondary.navbar-dark.col-md-12.col-sm-12.col-xs-12
@@ -26,46 +26,26 @@ html(lang="es")
               a.nav-link(href="products") PRODUCTOS
             li.nav-item
               a.nav-link(href="selector-chat") SELECTOR Y CHAT
-            li.nav-item 
+            li.nav-item
               a.nav-link(href="about") ACERCA DE LA EMPRESA
             li.nav-item
               a.nav-link(href="contact") CONTACTO
             li.nav-item
               a.nav-link(href="webservices") WEBSERVICES
-
-    div.alert.alert-success(role="alert" style="margin: 3em;")
-      span.sr-only
-      |           Gracias por contactar con nosotros. En breve nos pondremos en contacto con usted.
-  div.col-sm-6.mx-5
-    h4.text-secondary Ha introducido los siguientes datos:
-    p
-      b Nombre: 
-      span #{nombre}
-    p
-      b Primer Apellido: 
-      span #{apellido1}
-    p
-      b Segundo Apellido: 
-      span #{apellido2}
-    p
-      b Género: 
-      span #{genero}
-    p
-      b Edad: 
-      span #{edad}
-    p
-      b eMail: 
-      span #{email}
-    p
-      b Dirección: 
-      span #{dir}
-    p
-      b Número: 
-      span #{num}
-    p
-      b Código Postal: 
-      span #{cp}
-    p
-      b Mensaje: 
-      span #{mensaje}
-html
+    .container-fluid(style="margin-left: 1em;")
+      .row.my-5(align="center")
+        .container.col-md-4.col-sm-4.col-12.my-4
+          img.image(src="images/pon2oon1.jpg" alt="K2 Pon2oon" height="300")
+          .middle
+            a(href="k2-pon2oon")
+              button.btn.btn-light K2 Pon2oon
+        .container.col-md-4.col-sm-4.col-12.my-4
+          img.image(src="images/armada1.jpg" alt="Armada ARV 116" height="300")
+          .middle
+            a(href="armada-ARV")
+              button.btn.btn-light Armada ARV 116
+        .container.col-md-4.col-sm-4.col-12.my-4
+          img.image(src="images/atomic1.jpg" alt="Atomic Redster S9" height="300")
+          .middle
+            a(href="atomic-redster-s9")
+              button.btn.btn-light Atomic Redster S9
