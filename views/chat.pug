@@ -38,10 +38,10 @@ html(lang="es")
               a.nav-link(href="chat") CHAT	
 
     div.col-sm-12.col-md-12.col-xs-12  
-      div.my-3#chat
+      div#chat.my-3
         h5.mx-3.text-secondary.col-xs-12 CHAT
-        span.border.border-secondary.rounded.mx-3.bg-light
-        form.col-sm-12(method="POST" action="")
+        span#chatarea.border.border-secondary.rounded.mx-3.bg-light
+        form#chatform.col-sm-12(method="POST" action="")
            label Mensaje:
            textarea#comment.form-control(rows="3")
            submit.btn.btn-outline-secondary.my-2#send(type="submit") Enviar

@@ -137,10 +137,21 @@ app.get('/selector', function(request, response) {
 
 io.on('connection', function(client) {
 	console.log('Client Connected...');
+
+	client.on('mensajeschat', function(datos) {
+		console.log(datos.info);
+		client.broadcast.emit('mensajeschat', datos);
+	});
+
 	client.on('unir', function(nombre) {
 		client.nickname = nombre;
 		console.log('Se ha unido ' + nombre);
 		client.broadcast.emit('unir', client.nickname)
+	});
+
+	client.on('disconnect', function() {
+		console.log('Se ha desconectado ' + client.nickname);
+		client.broadcast.emit('borrar usuario', client.nickname);
 	});
 });
 
