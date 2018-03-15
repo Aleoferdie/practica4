@@ -36,10 +36,10 @@ app.get('/contact', function(request, response) {
 });
 
 app.get('/selector', function(request, response) {
-	response.render('selector-chat');
+	response.render('selector');
 });
 
-app.get('/selector', function(request, response) {
+app.get('/chat', function(request, response) {
 	response.render('chat');
 });
 

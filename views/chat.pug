@@ -12,7 +12,7 @@ html(lang="es")
     script(src="code.js")
     link(rel="stylesheet" href="style.css")
   body
-    .row
+    div.row
       nav.navbar.navbar-expand-md.bg-secondary.navbar-dark.col-md-12.col-sm-12.col-xs-12
         a.mx-5.navbar-brand(href="index")
           img(src="images/logo.png" alt="logo")
@@ -35,11 +35,11 @@ html(lang="es")
             li.nav-item
               a.nav-link(href="chat") CHAT	
 
-	.col-sm-12.col-md-4.col-xs-12  
-          div.my-3#chat
-            label.mx-3.text-secondary CHAT
-            span.border.border-secondary.rounded.mx-3
-            form.col-sm-12(method="POST" action="")
-              label Mensaje:
-              textarea#comment.form-control(rows="3")
-              submit.btn.btn-outline-secondary.my-2#send(type="submit") Enviar
+    div.col-sm-12.col-md-12.col-xs-12  
+      div.my-3#chat
+        h5.mx-3.text-secondary.col-xs-12 CHAT
+        span.border.border-secondary.rounded.mx-3
+        form.col-sm-12(method="POST" action="")
+           label Mensaje:
+           textarea#comment.form-control(rows="3")
+           submit.btn.btn-outline-secondary.my-2#send(type="submit") Enviar
