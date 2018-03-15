@@ -1,7 +1,7 @@
 doctype html
 html(lang="es")
   head
-    title Selector y Chat
+    title Tienda de Alejandro, Chocarro y Santiago
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
@@ -12,7 +12,7 @@ html(lang="es")
     script(src="code.js")
     link(rel="stylesheet" href="style.css")
   body
-    div.row
+    .row
       nav.navbar.navbar-expand-md.bg-secondary.navbar-dark.col-md-12.col-sm-12.col-xs-12
         a.mx-5.navbar-brand(href="index")
           img(src="images/logo.png" alt="logo")
@@ -34,12 +34,20 @@ html(lang="es")
               a.nav-link(href="selector") SELECTOR DE PRODUCTOS
             li.nav-item
               a.nav-link(href="chat") CHAT
-
-    .col-sm-8.col-xs-12.mx-5.my-5
-      h6.text-secondary SELECCIÓN DE PRODUCTO
-        form.form-group.my-3
-          select.form-control.col-md-6.col-sm-12.col-xs-12
-            option(value="k2pon2oon" data-price="1000") K2 Pon2oon
-            option(value="armadaARV" data-price="889") Armada ARV 116
-            option(value="atomicRedsterS9" data-price="850") Atomic Redster S9
-          submit.btn.btn-outline-secondary.my-3#selection Aceptar
+      #texto.col-12.my-5.text-center
+        span
+          h6 Al pinchar en los productos se enviará una petición AJAX al servidor y aparecerá información debajo.
+    .row(style="margin-left: 1em;" align="center")
+      .container.col-md-4.col-sm-4.col-12.my-4
+        img.image(src="images/pon2oon1.jpg" alt="K2 Pon2oon" height="200")
+        .middle
+          button#k2.btn.btn-light K2 Pon2oon
+      .container.col-md-4.col-sm-4.col-12.my-4
+        img.image(src="images/armada1.jpg" alt="Armada ARV 116" height="200")
+        .middle
+          button#armada.btn.btn-light Armada ARV 116
+      .container.col-md-4.col-sm-4.col-12.my-4
+        img.image(src="images/atomic1.jpg" alt="Atomic Redster S9" height="200")
+        .middle
+          button#atomic.btn.btn-light Atomic Redster S9
+    div#info.col-md-8.my-3.mx-5

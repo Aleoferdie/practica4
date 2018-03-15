@@ -14,7 +14,7 @@ var logger = require('./logger');
 
 app.use(logger);
 
-app.use(express.static('public')); //igual es public...
+app.use(express.static('public')); // igual es public
 
 app.set('view engine', 'pug'); // busca plantillas PUG para su renderización en la carpeta views/
 
@@ -38,10 +38,6 @@ app.get('/products', function(request, response) {
 
 app.get('/contact', function(request, response) {
 	response.render('contact');
-});
-
-app.get('/selector', function(request, response) {
-	response.render('selector');
 });
 
 app.get('/chat', function(request, response) {
@@ -98,21 +94,42 @@ app.get('/atomic-redster-s9', function(request, response) {
 
 app.get('/webservices', function(request, response) {
 	//console.log(request.query.id);
+	var bloque = '';
 	switch(request.query.id) {
 		case '1':
-			var bloque = {'Modelo':'K2 Pon2oon','Precio':'1000€','Stock':'Disponible','imagen':'/images/k2pon2oon1.jpg'};
+			bloque = {'Modelo':'K2 Pon2oon','Precio':'1000€','Stock':'Disponible','Imagen':'/images/k2pon2oon1.jpg'};
 			response.json(bloque);
 			break;
 		case '2':
-			var bloque = {'Modelo':'Armada ARV 116','Precio':'889€','Stock':'Disponible','imagen':'/images/armada1.jpg'};
+			bloque = {'Modelo':'Armada ARV 116','Precio':'889€','Stock':'Disponible','Imagen':'/images/armada1.jpg'};
 			response.json(bloque);	
 			break;
 		case '3':
-			var bloque = {'Modelo':'Atomic Redster S9S','Precio':'850€','Stock':'Disponible','imagen':'/images/atomic1.jpg'};
+			bloque = {'Modelo':'Atomic Redster S9S','Precio':'850€','Stock':'Disponible','Imagen':'/images/atomic1.jpg'};
 			response.json(bloque);	
 			break;
 		default:
 			response.render('webserv');
+	}
+});
+
+app.get('/selector', function(request, response) {
+	var info = '';
+	switch(request.query.id) {
+		case '1':
+			info = {'Modelo':'K2 Pon2oon','Precio':'1000€','Stock':'Disponible','Imagen':'/images/k2pon2oon1.jpg'};
+			response.json(info);
+			break;
+		case '2':
+			info = {'Modelo':'Armada ARV 116','Precio':'889€','Stock':'Disponible','Imagen':'/images/armada1.jpg'};
+			response.json(info);
+			break;
+		case '3':
+			info = {'Modelo':'Atomic Redster S9','Precio':'850€','Stock':'Disponible','Imagen':'/images/atomic1.jpg'};
+			response.json(info);	
+			break;
+		default:
+			response.render('selector');		
 	}
 });
 
