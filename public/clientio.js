@@ -8,10 +8,9 @@ socket.on('connect', function(datos) {
 	console.log(socket.nickname);
 });
 
-socket.on('mensajeschat', function(datos) {
+//socket.on('mensajeschat', function(datos) {
 	//alert('Hay que introducir esta información en el chat: ' + datos.info);
-	$('#chatarea').append(datos.info + '\n');
-});
+//});
 
 $(document).ready(function() {
 	$('.btn').on('click', function(e) {
@@ -22,13 +21,11 @@ $(document).ready(function() {
 	})
 });
 
-socket.on('unir', function(nombre) {
+//socket.on('unir', function(nombre) {
 	//alert('Se ha unido ' + nombre);
-	$('#chatarea').append('Se ha unido ' + nombre + '\n');
-});
+//});
 
-socket.on('borrar usuario', function(nombre) {
+//socket.on('borrar usuario', function(nombre) {
 	//alert('Se ha desconectado el usuario ' + nombre);
-	$('#chatarea').append('Se ha desconectado ' + nombre + '\n');
-});
+//});
 
