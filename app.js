@@ -36,6 +36,10 @@ app.get('/contact', function(request, response) {
 	response.sendFile(path.join(__dirname + '/content/contact.html'));
 });
 
+app.get('/selector', function(request, response) {
+	response.render('selector');
+});
+
 //app.get('/webservices', function(request, response) {
 //	response.sendFile(path.join(__dirname + '/content/webserv.html'));
 //});
