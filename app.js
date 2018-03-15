@@ -97,7 +97,7 @@ app.get('/webservices', function(request, response) {
 	var bloque = '';
 	switch(request.query.id) {
 		case '1':
-			bloque = {'Modelo':'K2 Pon2oon','Precio':'1000€','Stock':'Disponible','Imagen':'/images/k2pon2oon1.jpg'};
+			bloque = {'Modelo':'K2 Pon2oon','Precio':'1000€','Stock':'Disponible','Imagen':'/images/pon2oon1.jpg'};
 			response.json(bloque);
 			break;
 		case '2':
