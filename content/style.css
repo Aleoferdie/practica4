@@ -35,10 +35,17 @@
         }
 
 .nav-link {
-    font-size: 14px
-}    
+            font-size: 14px
+        }    
 
 .carousel-inner img {
             width: 100%;
             height: 100%;
-            }    
+        }
+
+.border {
+            display: inline-block;
+            width: 500px;
+            height: 500px;
+            margin: 6px;
+        }            
