@@ -16,7 +16,7 @@ $(document).ready(function() {
 	$('.btn').on('click', function(e) {
 		var mensaje = socket.nickname + ': ' + $('#comment').val();
 		socket.emit('mensajeschat', {info: mensaje});
-		$('#chatarea').append(mensaje + '\n');
+		$('#chatarea').append('<span class="mx-2">' + mensaje + '<br>');
 		$('#comment').val('');
 	})
 });
