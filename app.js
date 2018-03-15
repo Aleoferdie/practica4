@@ -117,7 +117,7 @@ app.get('/selector', function(request, response) {
 	var info = '';
 	switch(request.query.id) {
 		case '1':
-			info = {'Modelo':'K2 Pon2oon','Precio':'1000€','Stock':'Disponible','Imagen':'/images/k2pon2oon1.jpg'};
+			info = {'Modelo':'K2 Pon2oon','Precio':'1000€','Stock':'Disponible','Imagen':'/images/pon2oon1.jpg'};
 			response.json(info);
 			break;
 		case '2':
