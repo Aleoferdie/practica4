@@ -11,6 +11,8 @@ var maxData = 20 * 1024 * 1024; // 20 MB
 var pug = require('pug');  		// Declaramos que vamos a emplear plantillas PUG
 var port = process.env.PORT || 8080;
 var logger = require('./logger');
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
 
 app.use(logger);
 
@@ -133,6 +135,17 @@ app.get('/selector', function(request, response) {
 	}
 });
 
-console.log('Servidor escuchando en el puerto 8080');
+io.on('connection', function(client) {
+	console.log('Client Connected...');
+	client.on('unir', function(nombre) {
+		client.nickname = nombre;
+		console.log('Se ha unido ' + nombre);
+		client.broadcast.emit('unir', client.nickname)
+	});
+});
 
-app.listen(port);
+console.log('Servidor escuchando en el puerto ' + port);
+
+//app.listen(port);
+
+server.listen(port);
