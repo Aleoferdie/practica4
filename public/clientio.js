@@ -11,7 +11,7 @@ socket.on('connect', function(datos) {
 socket.on('mensajeschat', function(datos) {
 	//alert('Hay que introducir esta información en el chat: ' + datos.info);
 	$(document).ready(function() {
-		$('#chatarea').append('<span class="mx-2">' + datos.info);
+		$('#chatarea').append('<span class="mx-2">' + datos.info + '<br>');
 	});
 });
 
@@ -34,7 +34,7 @@ socket.on('unir', function(nombre) {
 socket.on('borrar usuario', function(nombre) {
 	//alert('Se ha desconectado el usuario ' + nombre);
 	$(document).ready(function() {
-		$('#chatarea').append('Se ha desconectado '  + nombre + '<br>');
+		$('#chatarea').append('<span class="mx-2>"Se ha desconectado '  + nombre + '<br>');
 	});
 });
 
