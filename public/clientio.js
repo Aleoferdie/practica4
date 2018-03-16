@@ -11,7 +11,7 @@ socket.on('connect', function(datos) {
 socket.on('mensajeschat', function(datos) {
 	//alert('Hay que introducir esta información en el chat: ' + datos.info);
 	$(document).ready(function() {
-		$('#chatarea').append(datos.info);
+		$('#chatarea').append('<span class="mx-2">' + datos.info);
 	});
 });
 
@@ -27,7 +27,7 @@ $(document).ready(function() {
 socket.on('unir', function(nombre) {
 	//alert('Se ha unido ' + nombre);
 	$(document).ready(function() {
-		$('#chatarea').append('Se ha unido '  + nombre + '<br>');
+		$('#chatarea').append('<span class="mx-2">Se ha unido '  + nombre + '<br>');
 	});
 });
 
